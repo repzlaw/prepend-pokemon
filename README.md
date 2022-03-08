@@ -2,8 +2,8 @@
 
 ## DESCRIPTION
 
-This application creates enpoints where authenticated users can view all pokemons, select to view a single one and also update a pokemon if there are any mistakes.
-IT is a simple application and the authentication was handled with sanctum 
+This application creates endpoints where authenticated users can view all pokemons, select to view a single one and also update a pokemon if there are any mistakes.
+IT is a simple application and the authentication was handled with sanctum.
 
 API built with laravel backend.
 
@@ -17,6 +17,9 @@ Created API endpoints for all features specified like :
 - updating a pokemon
 
 All features are working fine and the react components are also ready and functional
+
+### POSSIBLE IMPROVEMENTS
+The api/pokemons is currently returning all pokemons at a time, I think this can slow down the application and i would suggest returning a paginated data instead.
 
 ### HOW TO INSTALL
 
