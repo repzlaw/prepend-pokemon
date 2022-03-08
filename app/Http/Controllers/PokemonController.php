@@ -7,6 +7,7 @@ use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Resources\PokemonResource;
+use App\Http\Requests\UpdatePokemonRequest;
 use App\Http\Resources\SinglePokemonResource;
 
 class PokemonController extends Controller
@@ -60,19 +61,15 @@ class PokemonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePokemonRequest $request, Pokemon $pokemon)
     {
-        //
+        $pokemon->update($request->validated());
+
+        return $this->success( new SinglePokemonResource(($pokemon)),
+                                'pokemon updated successfully',
+                                Response::HTTP_OK
+                            );
+        return $pokemon;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
