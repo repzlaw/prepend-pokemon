@@ -2,10 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 
 class PokemonController extends Controller
 {
+    use ApiResponse;
+
+    /**
+     * Only auth for "sanctum auth" guard are allowed
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
+
     /**
      * Display a listing of the resource.
      *
