@@ -8888,7 +8888,8 @@ var Show = function Show() {
               response = _context.sent;
 
               if (response.status === 422) {
-                alert(response.errors.label[0]);
+                // console.log(response.errors)
+                alert('invalid data suplied');
               }
 
               if (response.status === 'success') {

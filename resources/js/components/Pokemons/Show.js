@@ -16,7 +16,8 @@ const Show = () => {
     const EditPokemonHandler = async (id,identifier,species_id,height,weight,base_experience,order,is_default)=>{
         const response =  await updatePokemon(id,identifier,species_id,height,weight,base_experience,order,is_default)
         if (response.status === 422) {
-            alert(response.errors.label[0])
+            // console.log(response.errors)
+            alert('invalid data suplied')
     
         }
         if (response.status ==='success') {
