@@ -1,0 +1,15 @@
+.navbar{
+    background: #2e384d !important;
+}
+.link{
+    text-decoration: none !important;
+}
+.head-color{
+    color:white !important;
+}
+.label{
+    font-size: 18px !important;
+}
+.list{
+    list-style-type: none;
+}
