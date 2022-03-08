@@ -1,8 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import {Button,Container} from 'react-bootstrap'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import  {getAllPokemons,savePokemon, updatePokemon, getSortedPokemon, updatePokemonOrders} from '../Service';
+import  {getAllPokemons} from '../Service';
 import { useNavigate } from 'react-router-dom';
 import { Audio } from  'react-loader-spinner'
 
@@ -77,25 +76,9 @@ const Index = () => {
                                         })}
                                         </tbody>
                                     </table>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
+                                
                                 </div>
                             }
-
-
-
-
-
-                            
                             {/* {pokemons.length === 0 && 
                                 <h6>No pokemon Found</h6>
                             

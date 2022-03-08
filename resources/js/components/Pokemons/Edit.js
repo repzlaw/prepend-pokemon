@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import '../Assets/Style.css'
-import {Spinner,Container,Row,Col,Card,Badge,Button,Modal} from 'react-bootstrap'
+import {Button,Modal} from 'react-bootstrap'
 
 const Edit = (props) => {
     const [identifier,setIdentifier] = useState(props.pokemon.identifier);
@@ -36,7 +36,6 @@ const Edit = (props) => {
 
     const EditPokemonHandler = (e)=>{
         e.preventDefault()
-        // console.log(props)
         props.onEdit(props.pokemon.id, identifier,species_id,height,
             weight,base_experience,order,is_default)
     }
