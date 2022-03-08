@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pokemon;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Http\Resources\PokemonResource;
+use App\Http\Resources\SinglePokemonResource;
 
 class PokemonController extends Controller
 {
@@ -26,18 +30,13 @@ class PokemonController extends Controller
      */
     public function index()
     {
-        //
-    }
+        // a better way might be to paginate the data
+        $pokemons = Pokemon::all();
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return $this->success( PokemonResource::collection(($pokemons)),
+                                'get pokemons request success',
+                                Response::HTTP_OK
+                            );
     }
 
     /**
@@ -46,9 +45,12 @@ class PokemonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Pokemon $pokemon)
     {
-        //
+        return $this->success( new SinglePokemonResource(($pokemon)),
+                                'pokemon fetch success',
+                                Response::HTTP_OK
+                            );
     }
 
     /**
