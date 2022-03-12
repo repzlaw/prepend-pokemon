@@ -35,6 +35,6 @@ The api/pokemons is currently returning all pokemons at a time, I think this can
 
 - `php artisan migrate`
 
-- `php artisan db:seed`
+- please use the tinker command or the registration endpoint provided to seed a users data and you are all set!!
 
 ![POKEMON TEST APP](https://res.cloudinary.com/sirdavies/image/upload/v1646737537/Screen_Shot_2022-03-08_at_12.03.59_PM_wxxyzj.png)
